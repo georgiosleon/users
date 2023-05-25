@@ -69,6 +69,10 @@ http://localhost:8080/api/swagger-ui/index.html
 
 https://github.com/mailersend/mailersend-java
 
+### For Load Testing Rest Endpoint I would do something like this Using Gatling
+
+https://www.baeldung.com/gatling-load-testing-rest-endpoint
+
 
 ###  Actuator
 http://localhost:8080/api/actuator
@@ -83,5 +87,4 @@ http://localhost:8080/api/actuator/mappings
 
 ###  HTTP TRACE 
 http://localhost:8080/api/actuator/httptrace
-
 
