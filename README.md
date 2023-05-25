@@ -65,6 +65,10 @@ curl --request POST \
 
 http://localhost:8080/api/swagger-ui/index.html
 
+### Send Welcome Email  with mailersend  just for example see Email Service need a domain to run in production 
+
+https://github.com/mailersend/mailersend-java
+
 
 ###  Actuator
 http://localhost:8080/api/actuator
@@ -79,3 +83,5 @@ http://localhost:8080/api/actuator/mappings
 
 ###  HTTP TRACE 
 http://localhost:8080/api/actuator/httptrace
+
+
