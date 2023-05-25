@@ -47,16 +47,16 @@ curl --request POST \
   --url http://localhost:8080/api/user \
   --header 'Content-Type: application/json' \
   --data '{
-	"firstName": "Tim",
-	"lastName": "Page",
-	"phone": "+378 85 345",
-	"email": "james@bloom.cok4",
-	"addressLine1": "Brook Street Lane 67",
+	"firstName": "test",
+	"lastName": "lala",
+	"phone": "+1234567",
+	"email": "lala@gmail.com",
+	"addressLine1": "Street 76 test",
 	"addressLine2": null,
-	"city": "Berlin",
-	"state": "Brandenburg",
-	"zip": "36413",
-	"countryCode": "DE"
+	"city": "Athens",
+	"state": "Attiki",
+	"zip": "11471",
+	"countryCode": "GR"
 }'
 ```
 

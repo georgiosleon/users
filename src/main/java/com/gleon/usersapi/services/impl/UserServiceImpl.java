@@ -4,14 +4,14 @@ import com.gleon.usersapi.domain.UserRequest;
 import com.gleon.usersapi.domain.entities.User;
 import com.gleon.usersapi.exceptions.ApplicationException;
 import com.gleon.usersapi.repositories.UserRepository;
+import com.gleon.usersapi.services.EmailService;
 import com.gleon.usersapi.services.UserService;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @Slf4j
@@ -21,16 +21,20 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final ModelMapper modelMapper;
 
-    public UserServiceImpl(UserRepository repository, ModelMapper modelMapper) {
+    private final EmailService emailService;
+
+    public UserServiceImpl(UserRepository repository, ModelMapper modelMapper, EmailService emailService) {
         this.repository = repository;
         this.modelMapper = modelMapper;
+        this.emailService = emailService;
     }
 
     @Override
-    public User createUser(UserRequest userRequest) throws Exception{
+    public User createUser(UserRequest userRequest) throws Exception {
         User user = modelMapper.map(userRequest, User.class);
         user = repository.save(user);
         log.info("User created: " + user.getId());
+        emailService.sendEmail(user.getEmail());
         return user;
     }
 
